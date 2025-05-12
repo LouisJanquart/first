@@ -10,13 +10,35 @@
   <h1 id="title1">Titre</h1>
   <p><a href="" id="switch-title">Change titre</a></p>
   <p><span>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil voluptatum explicabo neque iusto maiores, cumque delectus in nesciunt, commodi sapiente harum accusantium temporibus excepturi quod obcaecati tenetur incidunt esse nobis?</span><span>Quos at fugit labore. Asperiores minima aliquam ratione corrupti cum quas velit consequuntur eaque nihil aliquid sapiente voluptatum ex nisi consectetur voluptate soluta libero provident nulla rem nobis, quos exercitationem.</span><span>Excepturi facilis hic eius eum harum asperiores molestias dicta! Laboriosam quidem numquam vel tempore veritatis animi, placeat ab, nemo architecto laudantium iste. Adipisci atque illum eos magnam culpa officiis id.</span><span>Recusandae saepe et, vel ad quae officiis ipsa dolor porro nisi similique cum beatae omnis facilis culpa sit aut nostrum delectus? Molestiae eius, accusamus enim necessitatibus optio earum. Nemo, laudantium.</span><span>Doloremque nesciunt alias ex velit sequi eaque quia sit repellendus voluptatum tempore iusto iste distinctio consectetur, ipsa aliquam nostrum provident dignissimos earum facere odit est quam? Assumenda quos debitis sit.</span></p>
+
+  <hr>
+
+  <form action="" id="calculator">
+    <label>
+      Nombre 1
+      <input type="number" id="nb1" name="nb1">
+    </label>
+    <label>
+      Nombre 2
+      <input type="number" id="nb2" name="nb2">
+    </label>
+    <button>Calculer</button>
+  </form>
+
   <script defer>
     const $title1 = document.querySelector('#title1')
     const $switchTitle = document.querySelector('#switch-title')
     $switchTitle.addEventListener('click', ev => {
       ev.preventDefault()
-      console.log(ev)
+      console.log($switchTitle.id)
       $title1.innerText = "Bonjour :)"
+    })
+
+    const $calculator = document.querySelector('#calculator')
+    $calculator.addEventListener('submit', event => {
+      event.preventDefault()
+      const data = new FormData($calculator)
+      console.log(parseInt(data.get('nb1')) + parseInt(data.get('nb2')))
     })
   </script>
 </body>
