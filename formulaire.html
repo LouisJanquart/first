@@ -14,10 +14,10 @@
     const $title1 = document.querySelector('#title1')
     const $switchTitle = document.querySelector('#switch-title')
     $switchTitle.addEventListener('click', ev => {
-      ev.preventDefault
+      ev.preventDefault()
       console.log(ev)
+      $title1.innerText = "Bonjour :)"
     })
-    $title1.innerText = "Bonjour :)"
   </script>
 </body>
 </html>
